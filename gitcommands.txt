@@ -1,0 +1,29 @@
+// add the ssh key to the ssh agent
+
+eval "$(ssh-agent -s)"          // ensure the ssh agent is running
+
+ssh-add ~/.ssh/id_rsa           // add the ssh private key to ssh-agent
+
+ssh -T git@github.com           // test the ssh connection
+
+git remote add origin git@github.com:*****/RepositoryName.git          // add a remote repository's URL
+ 
+git remote set-url origin git@github.com:*****/RepositoryName.git      // update the existing "origin" remote's url
+
+
+// git commands to push files
+
+git init                        // initialize a local git repo
+
+git add .                       // add files to local repo
+
+git commit -m "XXXXXx"          // commit the changes
+
+git log                         // shows the commit history of a repository
+
+git status                      // provides essential infos about the current state of a git repository
+
+git branch -m main master       // change the branch name from main to master if you want
+
+git push origin master
+git push origin main         // push the files that you have added in your local repo , to your remote github account 
